@@ -1,14 +1,14 @@
 {
   "customers": [
     {
-      "id": 1,
       "name": "Maria Garcia",
       "email": "maria.garcia@example.com",
       "phone": "555-0101",
       "address": "742 Evergreen Terrace",
       "city": "Springfield",
       "state": "IL",
-      "zip": "62704"
+      "zip": "62704",
+      "id": 1
     },
     {
       "id": 2,
@@ -51,14 +51,14 @@
       "zip": "02108"
     },
     {
-      "name": "Test User",
-      "email": "test@example.com",
-      "phone": "555-0000",
-      "address": "123 Test St",
-      "city": "Testville",
-      "state": "TX",
-      "zip": "75001",
-      "id": 7
+      "name": "Gina M",
+      "email": "gina.mei@libertymutual.com",
+      "phone": "6178492310",
+      "address": "175 Berkeley",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02116",
+      "id": 6
     }
   ]
 }

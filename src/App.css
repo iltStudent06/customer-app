@@ -67,6 +67,16 @@
   letter-spacing: normal;
 }
 
+.api-status {
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.api-status-error {
+  color: var(--action-delete-border);
+  font-weight: 700;
+}
+
 .customer-table {
   width: 100%;
   border-collapse: collapse;
@@ -146,6 +156,17 @@
   padding: 9px 10px;
   background: transparent;
   color: var(--text-h);
+}
+
+.form-grid input.form-input-invalid {
+  border: 3px solid var(--action-delete-border);
+}
+
+.form-field-error {
+  color: var(--action-delete-border);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 700;
 }
 
 .form-button {
