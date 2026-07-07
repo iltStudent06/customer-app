@@ -1,35 +1,31 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createCustomer } from '../api/customers'
+import ApiStatus from '../components/ApiStatus'
 import CustomerForm from '../components/CustomerForm'
+import { useCustomerApi } from '../hooks/useCustomerApi'
 import type { CustomerFormData } from '../types/customer'
 
 function AddPage() {
   const navigate = useNavigate()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const { addCustomer, loading, error } = useCustomerApi()
 
   async function handleAddCustomer(formData: CustomerFormData) {
     try {
-      setIsSubmitting(true)
-      setErrorMessage('')
-      await createCustomer(formData)
+      await addCustomer(formData)
       navigate('/')
     } catch {
-      setErrorMessage('Unable to add customer. Please try again.')
-    } finally {
-      setIsSubmitting(false)
+      return
     }
   }
 
   return (
     <section>
       <h2 className="page-title">Add Customer</h2>
-      {errorMessage ? <p>{errorMessage}</p> : null}
+      <ApiStatus loading={loading} error={error} loadingMessage="Loading customer data..." />
       <CustomerForm
         mode="add"
         onSubmit={handleAddCustomer}
-        isSubmitting={isSubmitting}
+        onCancel={() => navigate('/')}
+        isSubmitting={loading}
       />
     </section>
   )

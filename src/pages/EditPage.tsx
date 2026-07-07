@@ -1,73 +1,50 @@
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getCustomerById, updateCustomer } from '../api/customers'
+import ApiStatus from '../components/ApiStatus'
 import CustomerForm from '../components/CustomerForm'
-import type { Customer, CustomerFormData } from '../types/customer'
+import { useCustomerApi } from '../hooks/useCustomerApi'
+import type { CustomerFormData } from '../types/customer'
 
 function EditPage() {
   const navigate = useNavigate()
   const { id } = useParams()
-  const [customer, setCustomer] = useState<Customer | undefined>(undefined)
-  const [isLoading, setIsLoading] = useState(true)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const { customers, loading, error, updateCustomer } = useCustomerApi()
 
-  useEffect(() => {
-    async function loadCustomer() {
-      const customerId = Number(id)
-
-      if (!id || Number.isNaN(customerId)) {
-        setErrorMessage('Invalid customer ID.')
-        setIsLoading(false)
-        return
-      }
-
-      try {
-        setErrorMessage('')
-        const fetchedCustomer = await getCustomerById(customerId)
-        setCustomer(fetchedCustomer)
-      } catch {
-        setErrorMessage(`Unable to load customer with ID: ${id}`)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    loadCustomer()
-  }, [id])
+  const customerId = Number(id)
+  const hasInvalidCustomerId = !id || Number.isNaN(customerId)
+  const customer = useMemo(
+    () => customers.find((item) => item.id === customerId),
+    [customerId, customers],
+  )
 
   async function handleEditCustomer(formData: CustomerFormData) {
-    const customerId = Number(id)
-
-    if (!id || Number.isNaN(customerId)) {
-      setErrorMessage('Invalid customer ID.')
+    if (hasInvalidCustomerId || !customer) {
       return
     }
 
     try {
-      setIsSubmitting(true)
-      setErrorMessage('')
       await updateCustomer(customerId, formData)
       navigate('/')
     } catch {
-      setErrorMessage('Unable to update customer. Please try again.')
-    } finally {
-      setIsSubmitting(false)
+      return
     }
   }
+
+  const displayError = hasInvalidCustomerId ? 'Invalid customer ID.' : error
 
   return (
     <section>
       <h2 className="page-title">Edit Customer</h2>
-      {isLoading ? <p>Loading customer...</p> : null}
-      {!isLoading && errorMessage ? <p>{errorMessage}</p> : null}
-      {!isLoading && customer ? (
+      <ApiStatus loading={loading} error={displayError} loadingMessage="Loading customer..." />
+      {!loading && !displayError && !customer ? <p>Customer not found.</p> : null}
+      {!loading && customer ? (
         <CustomerForm
           key={customer.id}
           mode="edit"
-          initialCustomer={customer}
+          initialData={customer}
           onSubmit={handleEditCustomer}
-          isSubmitting={isSubmitting}
+          onCancel={() => navigate('/')}
+          isSubmitting={loading}
         />
       ) : null}
     </section>
