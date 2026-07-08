@@ -4,6 +4,12 @@ import { describe, expect, test, vi } from 'vitest'
 import CustomerList from './CustomerList'
 import type { Customer } from '../types/customer'
 
+const defaultSortProps = {
+  sortField: 'name' as const,
+  sortDirection: 'asc' as const,
+  onSortChange: () => {},
+}
+
 describe('CustomerList', () => {
   test('Renders customer names', () => {
     const customers: Customer[] = [
@@ -41,7 +47,12 @@ describe('CustomerList', () => {
 
     render(
       <MemoryRouter>
-        <CustomerList customers={customers} onDelete={() => {}} deletingCustomerId={null} />
+        <CustomerList
+          customers={customers}
+          onDelete={() => {}}
+          deletingCustomerId={null}
+          {...defaultSortProps}
+        />
       </MemoryRouter>,
     )
 
@@ -53,7 +64,12 @@ describe('CustomerList', () => {
   test('Renders empty state when no customers are provided', () => {
     render(
       <MemoryRouter>
-        <CustomerList customers={[]} onDelete={() => {}} deletingCustomerId={null} />
+        <CustomerList
+          customers={[]}
+          onDelete={() => {}}
+          deletingCustomerId={null}
+          {...defaultSortProps}
+        />
       </MemoryRouter>,
     )
 
@@ -77,7 +93,12 @@ describe('CustomerList', () => {
 
     render(
       <MemoryRouter>
-        <CustomerList customers={customers} onDelete={onDelete} deletingCustomerId={null} />
+        <CustomerList
+          customers={customers}
+          onDelete={onDelete}
+          deletingCustomerId={null}
+          {...defaultSortProps}
+        />
       </MemoryRouter>,
     )
 
@@ -113,7 +134,12 @@ describe('CustomerList', () => {
 
     render(
       <MemoryRouter>
-        <CustomerList customers={customers} onDelete={() => {}} deletingCustomerId={null} />
+        <CustomerList
+          customers={customers}
+          onDelete={() => {}}
+          deletingCustomerId={null}
+          {...defaultSortProps}
+        />
       </MemoryRouter>,
     )
 

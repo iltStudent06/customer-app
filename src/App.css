@@ -38,6 +38,14 @@
   font-size: 15px;
 }
 
+.app-theme-toggle {
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
 .app-nav-link:hover {
   border-color: var(--accent-border);
   background: var(--accent-bg);
@@ -77,6 +85,94 @@
   font-weight: 700;
 }
 
+.customer-search-bar {
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.customer-search-label {
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.customer-search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customer-search-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 10px;
+  background: transparent;
+  color: var(--text-h);
+}
+
+.customer-search-clear {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  min-width: 36px;
+  background: transparent;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.customer-search-clear:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.customer-search-count {
+  margin: 0;
+  font-size: 13px;
+}
+
+.pagination-controls {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pagination-page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-page-size label {
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.pagination-page-size select {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  background: transparent;
+  color: var(--text-h);
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-page-number {
+  color: var(--text-h);
+  min-width: 70px;
+  text-align: center;
+  font-size: 13px;
+}
+
 .customer-table {
   width: 100%;
   border-collapse: collapse;
@@ -92,6 +188,38 @@
 .customer-table th {
   color: var(--text-h);
   font-weight: 600;
+}
+
+.customer-table-sort-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.customer-table-sort-button:hover {
+  color: var(--accent);
+}
+
+.customer-table-sort-indicators {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 0.8;
+}
+
+.customer-table-sort-indicator {
+  opacity: 0.35;
+  font-size: 10px;
+}
+
+.customer-table-sort-indicator-active {
+  opacity: 1;
 }
 
 .row-actions {

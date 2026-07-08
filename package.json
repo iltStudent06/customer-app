@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "api": "json-server --watch db.json --port 3001",
+    "api:restart": "fuser -k 3001/tcp || true && npm run api",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
