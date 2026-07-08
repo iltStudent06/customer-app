@@ -8,7 +8,7 @@ import ListPage from './pages/ListPage.tsx'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ErrorBoundary>
         <Routes>
           <Route element={<Layout />}>
