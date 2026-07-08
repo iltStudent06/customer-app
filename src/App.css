@@ -178,3 +178,26 @@
   padding: 8px 14px;
   cursor: pointer;
 }
+
+.app-error-boundary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-error-message {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.app-error-stack {
+  margin: 0;
+  max-height: 220px;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-size: 14px;
+}

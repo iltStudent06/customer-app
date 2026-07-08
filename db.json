@@ -1,7 +1,7 @@
 {
   "customers": [
     {
-      "name": "Maria Garcia",
+      "name": "Maria Garcia 2",
       "email": "maria.garcia@example.com",
       "phone": "555-0101",
       "address": "742 Evergreen Terrace",
@@ -49,16 +49,6 @@
       "city": "Boston",
       "state": "MA",
       "zip": "02108"
-    },
-    {
-      "name": "Gina Mei",
-      "email": "gina.mei@libertymutual.com",
-      "phone": "6178492310",
-      "address": "175 Berkeley",
-      "city": "Boston",
-      "state": "MA",
-      "zip": "02116",
-      "id": 6
     }
   ]
 }

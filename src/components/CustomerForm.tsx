@@ -110,9 +110,10 @@ function CustomerForm({
   return (
     <form className="customer-form" onSubmit={handleSubmit} noValidate>
       <div className="form-grid">
-        <label>
+        <label htmlFor="name">
           Name
           <input
+            id="name"
             value={formData.name}
             onChange={handleInputChange}
             name="name"
@@ -122,9 +123,10 @@ function CustomerForm({
           />
           {errors.name ? <span className="form-field-error">{errors.name}</span> : null}
         </label>
-        <label>
+        <label htmlFor="email">
           Email
           <input
+            id="email"
             value={formData.email}
             onChange={handleInputChange}
             name="email"
@@ -135,9 +137,10 @@ function CustomerForm({
           />
           {errors.email ? <span className="form-field-error">{errors.email}</span> : null}
         </label>
-        <label>
+        <label htmlFor="phone">
           Phone
           <input
+            id="phone"
             value={formData.phone}
             onChange={handleInputChange}
             name="phone"
@@ -147,27 +150,30 @@ function CustomerForm({
           />
           {errors.phone ? <span className="form-field-error">{errors.phone}</span> : null}
         </label>
-        <label>
+        <label htmlFor="address">
           Address
           <input
+            id="address"
             value={formData.address}
             onChange={handleInputChange}
             name="address"
             disabled={isSubmitting}
           />
         </label>
-        <label>
+        <label htmlFor="city">
           City
           <input
+            id="city"
             value={formData.city}
             onChange={handleInputChange}
             name="city"
             disabled={isSubmitting}
           />
         </label>
-        <label>
+        <label htmlFor="state">
           State
           <input
+            id="state"
             value={formData.state}
             onChange={handleInputChange}
             maxLength={2}
@@ -175,9 +181,10 @@ function CustomerForm({
             disabled={isSubmitting}
           />
         </label>
-        <label>
+        <label htmlFor="zip">
           ZIP
           <input
+            id="zip"
             value={formData.zip}
             onChange={handleInputChange}
             name="zip"
