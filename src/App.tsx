@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout.tsx'
 import ErrorBoundary from './components/ErrorBoundary.tsx'
 import AddPage from './pages/AddPage.tsx'
@@ -8,7 +8,7 @@ import ListPage from './pages/ListPage.tsx'
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <ErrorBoundary>
         <Routes>
           <Route element={<Layout />}>
@@ -18,7 +18,7 @@ function App() {
           </Route>
         </Routes>
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
