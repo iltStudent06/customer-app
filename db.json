@@ -21,14 +21,14 @@
       "zip": "20500"
     },
     {
-      "id": 3,
       "name": "Aisha Patel",
       "email": "aisha.patel@example.com",
       "phone": "555-0103",
       "address": "350 Fifth Avenue",
-      "city": "New York",
+      "city": "New York City",
       "state": "NY",
-      "zip": "10118"
+      "zip": "10118",
+      "id": 3
     },
     {
       "id": 4,

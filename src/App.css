@@ -278,6 +278,12 @@
   font-size: 14px;
 }
 
+.form-label-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .form-grid input {
   border: 1px solid var(--border);
   border-radius: 8px;

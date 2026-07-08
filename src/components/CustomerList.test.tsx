@@ -4,14 +4,18 @@ import { describe, expect, test, vi } from 'vitest'
 import CustomerList from './CustomerList'
 import type { Customer } from '../types/customer'
 
+// Shared sort props required by CustomerList in these tests.
 const defaultSortProps = {
   sortField: 'name' as const,
   sortDirection: 'asc' as const,
   onSortChange: () => {},
 }
 
+// Test suite for rendering and interaction behavior of the customer list table.
 describe('CustomerList', () => {
+  // Confirms all provided customer rows are rendered.
   test('Renders customer names', () => {
+    // Representative sample rows for list rendering.
     const customers: Customer[] = [
       {
         id: 1,
@@ -45,6 +49,7 @@ describe('CustomerList', () => {
       },
     ]
 
+    // Render inside MemoryRouter because the component contains Link elements.
     render(
       <MemoryRouter>
         <CustomerList
@@ -56,11 +61,13 @@ describe('CustomerList', () => {
       </MemoryRouter>,
     )
 
+    // Assert each customer name appears in the table.
     customers.forEach((customer) => {
       expect(screen.getByText(customer.name)).toBeInTheDocument()
     })
   })
 
+  // Confirms empty-state message is shown when there are no customers.
   test('Renders empty state when no customers are provided', () => {
     render(
       <MemoryRouter>
@@ -76,6 +83,7 @@ describe('CustomerList', () => {
     expect(screen.getByText('No customers found.')).toBeInTheDocument()
   })
 
+  // Confirms delete action calls the callback with expected id and name.
   test('Delete callback', () => {
     const customers: Customer[] = [
       {
@@ -89,6 +97,7 @@ describe('CustomerList', () => {
         zip: '73301',
       },
     ]
+    // Spy to verify delete callback invocation.
     const onDelete = vi.fn()
 
     render(
@@ -102,12 +111,14 @@ describe('CustomerList', () => {
       </MemoryRouter>,
     )
 
+    // Trigger delete and verify callback arguments.
     screen.getByRole('button', { name: 'Delete' }).click()
 
     expect(onDelete).toHaveBeenCalledTimes(1)
-    expect(onDelete).toHaveBeenCalledWith(42)
+    expect(onDelete).toHaveBeenCalledWith(42, 'Dana Lee')
   })
 
+  // Confirms edit links render for each row and point to the correct route.
   test('Edit links', () => {
     const customers: Customer[] = [
       {
@@ -143,6 +154,7 @@ describe('CustomerList', () => {
       </MemoryRouter>,
     )
 
+    // Collect all Edit links and validate count and href values.
     const editLinks = screen.getAllByRole('link', { name: 'Edit' })
 
     expect(editLinks).toHaveLength(customers.length)
