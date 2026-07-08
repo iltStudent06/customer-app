@@ -47,7 +47,7 @@ describe('CustomerForm', () => {
     const formData = {
       name: 'Jane Doe',
       email: 'jane.doe@example.com',
-      phone: '555-123-4567',
+      phone: '(555) 123-4567',
       address: '123 Main St',
       city: 'Denver',
       state: 'CO',
@@ -133,7 +133,9 @@ describe('CustomerForm', () => {
     await user.click(screen.getByRole('button', { name: 'Add Customer' }))
 
     expect(
-      await screen.findByText('Phone can only contain numbers and dashes (-).'),
+      await screen.findByText(
+        'Phone can only contain numbers, dashes (-), parentheses (), and spaces.',
+      ),
     ).toBeInTheDocument()
     expect(onSubmit).not.toHaveBeenCalled()
   })

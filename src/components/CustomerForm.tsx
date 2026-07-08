@@ -80,8 +80,9 @@ function CustomerForm({
 
     if (!data.phone.trim()) {
       validationErrors.phone = 'Phone is required.'
-    } else if (!/^[0-9-]+$/.test(data.phone.trim())) {
-      validationErrors.phone = 'Phone can only contain numbers and dashes (-).'
+    } else if (!/^[0-9()\- ]+$/.test(data.phone.trim())) {
+      validationErrors.phone =
+        'Phone can only contain numbers, dashes (-), parentheses (), and spaces.'
     }
 
     return validationErrors
