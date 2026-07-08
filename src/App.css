@@ -178,11 +178,23 @@
   border-collapse: collapse;
 }
 
+.customer-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .customer-table th,
 .customer-table td {
   border-bottom: 1px solid var(--border);
   padding: 12px 8px;
   text-align: left;
+}
+
+.customer-table th:nth-child(3),
+.customer-table td:nth-child(3),
+.customer-table th:nth-child(4),
+.customer-table td:nth-child(4) {
+  white-space: nowrap;
 }
 
 .customer-table th {

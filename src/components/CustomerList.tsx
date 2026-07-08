@@ -50,9 +50,10 @@ function CustomerList({
 
   // Render sortable table headers and row actions for edit/delete.
   return (
-    <table className="customer-table">
-      <thead>
-        <tr>
+    <div className="customer-table-wrapper">
+      <table className="customer-table">
+        <thead>
+          <tr>
           <th aria-sort={getAriaSortValue('name')}>
             <button
               type="button"
@@ -94,32 +95,33 @@ function CustomerList({
           </th>
           <th>Phone</th>
           <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {customers.map((customer) => (
-          <tr key={customer.id}>
-            <td>{customer.name}</td>
-            <td>{customer.email}</td>
-            <td>{customer.city}</td>
-            <td>{customer.phone}</td>
-            <td className="row-actions">
-              <Link className="row-action-button row-action-edit" to={`/edit/${customer.id}`}>
-                Edit
-              </Link>
-              <button
-                type="button"
-                className="row-action-button row-action-delete"
-                onClick={() => onDelete(customer.id, customer.name)}
-                disabled={deletingCustomerId === customer.id}
-              >
-                {deletingCustomerId === customer.id ? 'Deleting...' : 'Delete'}
-              </button>
-            </td>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {customers.map((customer) => (
+            <tr key={customer.id}>
+              <td>{customer.name}</td>
+              <td>{customer.email}</td>
+              <td>{customer.city}</td>
+              <td>{customer.phone}</td>
+              <td className="row-actions">
+                <Link className="row-action-button row-action-edit" to={`/edit/${customer.id}`}>
+                  Edit
+                </Link>
+                <button
+                  type="button"
+                  className="row-action-button row-action-delete"
+                  onClick={() => onDelete(customer.id, customer.name)}
+                  disabled={deletingCustomerId === customer.id}
+                >
+                  {deletingCustomerId === customer.id ? 'Deleting...' : 'Delete'}
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
