@@ -163,8 +163,8 @@ const sampleCustomers: Customer[] = [
   },
   {
     id: 117,
-    name: "Dominique Leblanc",
-    email: "dominique.leblanc@example.com",
+    name: "Dan Leblanc",
+    email: "dan.leblanc@example.com",
     phone: "(555) 692-8857",
     address: "11 Stonecrest Blvd",
     city: "New Orleans",

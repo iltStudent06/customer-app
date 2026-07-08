@@ -1,7 +1,7 @@
 {
   "customers": [
     {
-      "name": "Maria Garcia 2",
+      "name": "Maria Garcia",
       "email": "maria.garcia@example.com",
       "phone": "555-0101",
       "address": "742 Evergreen Terrace",
@@ -179,16 +179,6 @@
       "city": "Raleigh",
       "state": "NC",
       "zip": "27601"
-    },
-    {
-      "name": "Raymond L",
-      "email": "raymond@gmail.com",
-      "phone": "(555) 010-1001",
-      "address": "",
-      "city": "",
-      "state": "",
-      "zip": "",
-      "id": 19
     }
   ]
 }
