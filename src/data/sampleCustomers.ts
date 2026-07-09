@@ -2,7 +2,7 @@ import type { Customer } from "../types/customer";
 
 const sampleCustomers: Customer[] = [
   {
-    id: 101,
+    id: 1,
     name: "Alex Johnson",
     email: "alex.johnson@example.com",
     phone: "(555) 010-1001",
@@ -12,7 +12,7 @@ const sampleCustomers: Customer[] = [
     zip: "94103",
   },
   {
-    id: 102,
+    id: 2,
     name: "Priya Patel",
     email: "priya.patel@example.com",
     phone: "(555) 010-1002",
@@ -22,7 +22,7 @@ const sampleCustomers: Customer[] = [
     zip: "60601",
   },
   {
-    id: 103,
+    id: 3,
     name: "Miguel Reyes",
     email: "miguel.reyes@example.com",
     phone: "(555) 010-1003",
@@ -32,7 +32,7 @@ const sampleCustomers: Customer[] = [
     zip: "73301",
   },
   {
-    id: 104,
+    id: 4,
     name: "Hannah Kim",
     email: "hannah.kim@example.com",
     phone: "(555) 010-1004",
@@ -42,7 +42,7 @@ const sampleCustomers: Customer[] = [
     zip: "98101",
   },
   {
-    id: 105,
+    id: 5,
     name: "Marcus Rivera",
     email: "marcus.rivera@example.com",
     phone: "(555) 210-3847",
@@ -52,7 +52,7 @@ const sampleCustomers: Customer[] = [
     zip: "78701",
   },
   {
-    id: 106,
+    id: 6,
     name: "Priya Nair",
     email: "priya.nair@example.com",
     phone: "(555) 342-9021",
@@ -62,7 +62,7 @@ const sampleCustomers: Customer[] = [
     zip: "85001",
   },
   {
-    id: 107,
+    id: 7,
     name: "Derek Okafor",
     email: "derek.okafor@example.com",
     phone: "(555) 487-1563",
@@ -82,7 +82,7 @@ const sampleCustomers: Customer[] = [
     zip: "33101",
   },
   {
-    id: 109,
+    id: 9,
     name: "Caleb Thornton",
     email: "caleb.thornton@example.com",
     phone: "(555) 719-4402",
@@ -92,7 +92,7 @@ const sampleCustomers: Customer[] = [
     zip: "80201",
   },
   {
-    id: 110,
+    id: 10,
     name: "Aisha Patel",
     email: "aisha.patel@example.com",
     phone: "(555) 823-6615",
@@ -102,7 +102,7 @@ const sampleCustomers: Customer[] = [
     zip: "60601",
   },
   {
-    id: 111,
+    id: 11,
     name: "Ethan Larsson",
     email: "ethan.larsson@example.com",
     phone: "(555) 904-2290",
@@ -112,7 +112,7 @@ const sampleCustomers: Customer[] = [
     zip: "97201",
   },
   {
-    id: 112,
+    id: 12,
     name: "Natalie Cho",
     email: "natalie.cho@example.com",
     phone: "(555) 157-8834",
@@ -122,7 +122,7 @@ const sampleCustomers: Customer[] = [
     zip: "37201",
   },
   {
-    id: 113,
+    id: 13,
     name: "Jordan Hayes",
     email: "jordan.hayes@example.com",
     phone: "(555) 268-5509",
@@ -132,7 +132,7 @@ const sampleCustomers: Customer[] = [
     zip: "55401",
   },
   {
-    id: 114,
+    id: 14,
     name: "Valentina Cruz",
     email: "valentina.cruz@example.com",
     phone: "(555) 374-1177",
@@ -142,7 +142,7 @@ const sampleCustomers: Customer[] = [
     zip: "78201",
   },
   {
-    id: 115,
+    id: 15,
     name: "Brendan Walsh",
     email: "brendan.walsh@example.com",
     phone: "(555) 445-9963",
@@ -152,7 +152,7 @@ const sampleCustomers: Customer[] = [
     zip: "02101",
   },
   {
-    id: 116,
+    id: 16,
     name: "Yuki Tanaka",
     email: "yuki.tanaka@example.com",
     phone: "(555) 563-4421",
@@ -162,7 +162,7 @@ const sampleCustomers: Customer[] = [
     zip: "92101",
   },
   {
-    id: 117,
+    id: 17,
     name: "Dan Leblanc",
     email: "dan.leblanc@example.com",
     phone: "(555) 692-8857",
