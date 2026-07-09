@@ -29,7 +29,7 @@ The data flow is UI pages call methods from useCustomerApi.
 useCustomerApi performs API call (or demo fallback logic).
 On success/fallback result, it dispatches reducer actions (mainly SET_CUSTOMERS). Reducer computes next state.
 
-# Custom hooks (e.g., useCustomerApi, useCustomers) and what logic they encapsulate
+# Custom hooks (e.g., useCustomerApi) and what logic they encapsulate
 
 The useCustomerAPI hook encapsulates the customer data operations logic:
 
